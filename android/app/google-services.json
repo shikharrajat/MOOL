@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "402987417451",
+    "project_id": "mool-3bda4",
+    "storage_bucket": "mool-3bda4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402987417451:android:2cee310cabed31781a162e",
+        "android_client_info": {
+          "package_name": "com.example.mool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402987417451-tlu2o3plhuk7d2edo3e3g6323og6cq0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCih8h7Ms0Une7BnyikDsLnA214_BZcx24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402987417451-tlu2o3plhuk7d2edo3e3g6323og6cq0r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
