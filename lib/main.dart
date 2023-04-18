@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mool/screens/splash_screen.dart';
+import 'package:mool/screens/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,8 +22,8 @@ class MyApp extends StatelessWidget {
         home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
     builder: (context, snapshot) => snapshot.hasData
-    ? const SplashScreen(true)
-        : const SplashScreen(false),
+    ? const homescreen()
+        : const   homescreen(),
     ),
     );
   }
