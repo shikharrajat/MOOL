@@ -11,6 +11,8 @@ import './widgets/Product_card.dart';
 import './screens/categories_screen.dart';
 
 
+
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -42,8 +44,8 @@ class MyApp extends StatelessWidget {
         home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
     builder: (context, snapshot) => snapshot.hasData
-    ? const CategoryScreen()
-        : const CategoryScreen(),
+    ? const homescreen()
+        : const  homescreen(),
     ),
     ),);
   }

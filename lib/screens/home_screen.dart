@@ -16,8 +16,23 @@ class homescreen extends StatefulWidget {
 class _homescreenState extends State<homescreen> {
   final searchquery = TextEditingController();
   var discountlist = ['1', '2', '3', '4', '5'];
+
+
   var _selectedindex = 0;
+
   void _onItemTapped(int index) {
+    if(index == 0){
+      Navigator.of(context).pushNamed(homescreen.routeName);
+    }
+    else if(index ==1){
+      print('favorite');
+    }
+    else if(index == 2){
+      Navigator.of(context).pushNamed(CategoryScreen.routeName);
+    }
+    else if(index == 3){
+      print('Account');
+    }
 
     setState(() {
       _selectedindex = index;
@@ -26,7 +41,7 @@ class _homescreenState extends State<homescreen> {
 
   @override
   Widget build(BuildContext context) {
-   
+
     return Scaffold(
       drawer: Drawer() ,
       appBar: AppBar(
@@ -37,7 +52,7 @@ class _homescreenState extends State<homescreen> {
           height: 40,
           child: TextField(
             textAlignVertical: TextAlignVertical.center,
-           maxLines: 3,
+            maxLines: 3,
             controller: searchquery,
             style: TextStyle(
                 fontWeight: FontWeight.w500, fontStyle: FontStyle.italic,fontSize: 20),
@@ -52,7 +67,7 @@ class _homescreenState extends State<homescreen> {
               hintText: 'Search',
               prefixIcon:Icon(Icons.search),
 
-             contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 3 ),
+              contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 3 ),
             ),
           ),
         ),
@@ -61,10 +76,10 @@ class _homescreenState extends State<homescreen> {
         ],
 
         bottom: AppBar(toolbarHeight: 30,
-            elevation: 1,backgroundColor: Colors.orange[300],
-            leading: Icon(Icons.location_on_outlined,color: Colors.black),
-            title: Text('Deliver to Shikhar-Kota 324001' ,style: TextStyle(color: Colors.black,fontSize: 15,),),
-      ),),
+          elevation: 1,backgroundColor: Colors.orange[300],
+          leading: Icon(Icons.location_on_outlined,color: Colors.black),
+          title: Text('Deliver to Shikhar-Kota 324001' ,style: TextStyle(color: Colors.black,fontSize: 15,),),
+        ),),
       body: Column(
         children: [
 

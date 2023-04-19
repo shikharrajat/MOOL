@@ -31,7 +31,7 @@ InputDecorationTheme inputDecorationTheme() {
 
 TextTheme textTheme() {
   return TextTheme(
-    bodyLarge: TextStyle(color: kTextColor),
+    bodyLarge: TextStyle(color: kTextColor,fontSize:20),
     bodyMedium: TextStyle(color: kTextColor),
   );
 }
