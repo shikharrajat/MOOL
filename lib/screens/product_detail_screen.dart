@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import '../models/product.dart';
+import '../Providers/product.dart';
+import 'package:provider/provider.dart';
+import '../size_config.dart';
 
 class ProductDetail extends StatelessWidget {
 
-  final Product product;
+//  final Product product;
+  static const routeName = '/product-detail';
 
-  ProductDetail(this.product);
+ // ProductDetail(this.product);
 
   @override
   Widget build(BuildContext context) {

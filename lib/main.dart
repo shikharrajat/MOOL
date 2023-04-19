@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:mool/screens/product_detail_screen.dart';
 import 'package:mool/screens/splash_screen.dart';
 import 'package:mool/screens/home_screen.dart';
+import 'package:provider/provider.dart';
+import 'Providers/products.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,15 +20,26 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+          providers: [
+            ChangeNotifierProvider.value(
+            value: Products(),
+    ),
+
+          ],
+    child:MaterialApp(
       title: 'Flutter Demo',
 
+        routes:{
+         homescreen.routeName: (context) => homescreen(),
+          ProductDetail.routeName: (context) => ProductDetail(),
+        } ,
         home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
     builder: (context, snapshot) => snapshot.hasData
     ? const homescreen()
         : const   homescreen(),
     ),
-    );
+    ),);
   }
 }

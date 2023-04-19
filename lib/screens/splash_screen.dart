@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../size_config.dart';
 
 class SplashScreen extends StatefulWidget {
   final bool isLogin;

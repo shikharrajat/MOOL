@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-
+import 'package:mool/screens/product_detail_screen.dart';
+import 'package:provider/provider.dart';
+import '../size_config.dart';
 
 
 class homescreen extends StatefulWidget {
   const homescreen({Key? key}) : super(key: key);
 
+  static const routeName = '/home';
   @override
   State<homescreen> createState() => _homescreenState();
 }
@@ -113,7 +116,7 @@ class _homescreenState extends State<homescreen> {
                           tileColor: Colors.orange,
                           title: ClipRRect(
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () => ProductDetail(),
                               child: Text(""),
                             ),
                           ),
