@@ -6,6 +6,7 @@ import 'package:mool/screens/splash_screen.dart';
 import 'package:mool/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'Providers/products.dart';
+import 'theme.dart';
 
 
 Future<void> main() async {
@@ -29,8 +30,8 @@ class MyApp extends StatelessWidget {
           ],
     child:MaterialApp(
       title: 'Flutter Demo',
-
-        routes:{
+      theme: theme(),
+      routes:{
          homescreen.routeName: (context) => homescreen(),
           ProductDetail.routeName: (context) => ProductDetail(),
         } ,
