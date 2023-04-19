@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import '../Providers/Product.dart';
 import '../screens/product_detail_screen.dart';
-
+import 'package:provider/provider.dart';
+import '../Providers/products.dart';
 import '../constants.dart';
 import '../size_config.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({
-    Key? key,
-    this.width = 140,
-    this.aspectRetio = 1.02,
-    required this.product,
-  }) : super(key: key);
+  static const routeName = '/product-card';
 
-  final double width, aspectRetio;
-  final Product product;
+
+ double width = 140, aspectaetio = 1.02;
+
+
 
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Product>(context, listen: false);
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: SizedBox(

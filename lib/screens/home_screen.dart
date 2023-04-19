@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mool/screens/product_detail_screen.dart';
 import 'package:provider/provider.dart';
-import '../size_config.dart';
+import 'package:mool/main.dart';
+import 'categories_screen.dart';
 
 
 class homescreen extends StatefulWidget {
@@ -16,8 +17,8 @@ class _homescreenState extends State<homescreen> {
   final searchquery = TextEditingController();
   var discountlist = ['1', '2', '3', '4', '5'];
   var _selectedindex = 0;
-
   void _onItemTapped(int index) {
+
     setState(() {
       _selectedindex = index;
     });
@@ -25,6 +26,7 @@ class _homescreenState extends State<homescreen> {
 
   @override
   Widget build(BuildContext context) {
+   
     return Scaffold(
       drawer: Drawer() ,
       appBar: AppBar(
@@ -193,6 +195,7 @@ class _homescreenState extends State<homescreen> {
             activeIcon: Icon(Icons.category),
             icon: Icon(Icons.category_outlined),
             label: "Categories",
+
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),

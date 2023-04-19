@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../Providers/product.dart';
+import '../Providers/products.dart';
 import 'package:provider/provider.dart';
 import '../size_config.dart';
 
 class ProductDetail extends StatelessWidget {
+
 
 //  final Product product;
   static const routeName = '/product-detail';
@@ -12,6 +14,12 @@ class ProductDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final productId =
+    ModalRoute.of(context)?.settings.arguments as int; // is the id!
+    final loadedProduct = Provider.of<Products>(
+      context,
+      listen: false,
+    ).findById(productId);
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -23,19 +31,18 @@ class ProductDetail extends StatelessWidget {
         child: Column(children:
             <Widget>[ListView(children: [
             Column(children: <Widget>[
-            Text(product.title),
+            Text(loadedProduct.title),
         Card(color: Colors.teal,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
           elevation: 3,
           child: Row(children: <Widget>[
-            Text('${product.rating.toString}'),
+            Text('${loadedProduct.rating.toString}'),
             Icon(Icons.star),
           ]),)
         ],)
       ],)
 
-
-    )]
+    ]
     ,
     )
     )

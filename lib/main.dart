@@ -7,6 +7,8 @@ import 'package:mool/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'Providers/products.dart';
 import 'theme.dart';
+import './widgets/Product_card.dart';
+import './screens/categories_screen.dart';
 
 
 Future<void> main() async {
@@ -34,12 +36,14 @@ class MyApp extends StatelessWidget {
       routes:{
          homescreen.routeName: (context) => homescreen(),
           ProductDetail.routeName: (context) => ProductDetail(),
-        } ,
+        ProductCard.routeName: (context) => ProductCard(),
+        CategoryScreen.routeName: (context) =>  CategoryScreen(),
+        },
         home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
     builder: (context, snapshot) => snapshot.hasData
-    ? const homescreen()
-        : const   homescreen(),
+    ? const CategoryScreen()
+        : const CategoryScreen(),
     ),
     ),);
   }
